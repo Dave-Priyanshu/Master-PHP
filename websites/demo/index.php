@@ -4,7 +4,8 @@ require 'functions.php';
 require 'Database.php';
 
 $config = require 'config.php';
-$db = new database($config);
+$db = new database($config['database']);
+// $db = new database($config);
 $posts = $db->query("SELECT * FROM posts")->fetchAll(PDO::FETCH_ASSOC);
 
 dd($posts);
